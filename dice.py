@@ -1,11 +1,11 @@
-import random
+import secrets
 
 
 def roll(dice):
     try:
         num_dice, sides = map(int, dice.split("d"))
 
-        result = [random.randint(1, sides) for i in range(num_dice)]
+        result = [secrets.randbelow(sides) + 1 for i in range(num_dice)]
 
         return result
 
